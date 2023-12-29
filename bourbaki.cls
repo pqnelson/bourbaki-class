@@ -28,43 +28,50 @@
 
 \ifbook
 \LoadClass{book}
-\renewcommand\thesection{\arabic{section}}
-\renewcommand\thesubsection{\arabic{subsection}}
 \else
 \LoadClass{article}
 \fi
 
 \RequirePackage{amsmath,amssymb,amsthm}
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
 
-%\edef\mytitle{\@title}
 \let\og@title\title
 \def\THETITLE{}
 \def\title#1{\xdef\THETITLE{#1}\og@title{#1}}
-%\AtBeginDocument{\NewCommandCopy{\THETITLE}{\thetitle}}
+\ifbook
+\renewcommand\thechapter{\Roman{chapter}}
+\else
+\renewcommand\thearticle{\Roman{article}}
+\fi
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{subsection}}
+
 % header formatting
 \usepackage[inner=6pc,outer=6pc]{geometry}
 \usepackage{fancyhdr}
+
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[LE]{\Roman{article}}
+\fancyhead[LE]{\ifbook\thechapter\else\thearticle\fi}%{\ifbook\Roman{chapter}\else\Roman{article}\fi}
 \fancyhead[CE]{\ifbook\chaptername\else\THETITLE\fi}
-\fancyhead[RO]{\S\arabic{section}.\arabic{subsection}}
+\fancyhead[RO]{\S\thesection.\thesubsection} % {\S\arabic{section}.\arabic{subsection}}
 \fancyhead[CO]{\leftmark}
 \fancyfoot{}
 \fancyfoot[RO,LE]{\thepage}
 % https://tex.stackexchange.com/a/252415
 \renewcommand{\subsectionmark}[1]{\markboth{#1}{}} % MAKE IT 'subsectionmark' INSTEAD OF 'sectionmark'
-% section formatting
-\def\ucbf#1{\MakeUppercase{\bfseries #1}}
 
-\renewcommand\thesubsection{\arabic{subsection}}
+
+% section formatting
 
 \def\section{\@startsection{section}{1}%
   \z@{4pc}{1.5pc}%.7\baselineskip plus\baselineskip}{.5\baselineskip}%
   {\Large\centering\MakeUppercase}}
 \def\subsection{\@startsection{subsection}{2}%
   \z@{1.125pc}{0.5pc}%\baselineskip plus.7\baselineskip}{-.5em}%
-  {\ucbf}}
+  {\bfseries\MakeUppercase}}
 
 % Bourbaki does not have anything "lower" than subsection, so we respect that
 \let\subsubsection\undefined
