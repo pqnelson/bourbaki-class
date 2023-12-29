@@ -1,6 +1,13 @@
 This is an attempt to get something resembling Bourbaki's _Elements of Mathematics_
 in LaTeX form.
 
+# Example usage
+
+See the example [book](./example-book.tex) and [chapter](./example-chapter.tex)
+for examples of how to use this.
+
+# Quirks of the Style
+
 The only sectioning commands available are: chapters, sections,
 subsections. (Bourbaki is inconsistent with the terms "section" --- in
 chapter 1 of _Lie Groups and Lie Algebras_, they call it a "paragraph",
@@ -16,8 +23,19 @@ conventions.
 The theorem numbering is done _contra_ Bourbaki's conventions: they all
 share the same counter, numbered within the section.
 
-# TODO:
-- Chapter title formatting
-- Article title page
-- Equation numbering should be on the left-hand side
-- 
+Note that subsections in Bourbaki's books were about 1.5 pages long
+(plus or minus 0.5 pages) and that subsections immediately following
+`\section{}` commands.
+
+Also, curiously, there are no explicit "proof" environments in Bourbaki
+books. 
+
+Equations are numbered within sections, but without prefixing section
+numbers to the equation numbers. (See Bourbaki's _Theory of Sets_,
+Chapter III, section 1 and section 7, for evidence of this.)
+
+# TODO
+
+- Add an `examples` environment?
+- Make list environments pretty
+- Add a dangerous bend environment?
