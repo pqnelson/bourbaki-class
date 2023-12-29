@@ -1,0 +1,79 @@
+\NeedsTeXFormat{LaTeX2e}[2023-01-12]
+\ProvidesPackage{bourbaki}
+
+\RequirePackage{amsmath,amssymb,amsthm}
+
+% for key-value options
+\RequirePackage{xkeyval}
+
+\newcounter{chapter}
+\DeclareOptionX{chapter}{\setcounter{chapter}{#1}}
+\ExecuteOptionsX{chapter=1}
+\ProcessOptionsX
+\immediate\write16{Chapter number \thechapter}
+
+\def\ucbf#1{\MakeUppercase{\bfseries #1}}
+
+\def\section{\@startsection{section}{1}%
+  \z@{.7\baselineskip plus\baselineskip}{.5\baselineskip}%
+  {\Large\centering\ucbf}}
+\def\subsection{\@startsection{subsection}{2}%
+  \parindent{.5\baselineskip plus.7\baselineskip}{-.5em}%
+  {\ucbf}}
+
+% Bourbaki does not have anything "lower" than subsection, so we respect that
+\let\subsubsection\undefined
+\let\paragraph\undefined
+\let\subparagraph\undefined
+
+
+% Bourbaki's style, as found in, e.g., their Lie Groups book.
+\def\th@plain{%
+%%  \let\thm@indent\noindent % no indent
+%%  \thm@headfont{\bfseries}% heading font is bold
+%%  \thm@notefont{}% same as heading font
+%%  \thm@headpunct{.}% add period after heading
+%%  \let\thm@swap\@gobble
+%%  \thm@preskip\topsep
+%%  \thm@postskip\theorempreskipamount
+  \thm@headfont{\scshape}%
+  \itshape % body font
+}
+\def\th@definition{%
+  \thm@headfont{\scshape}%
+  \normalfont % body font
+}
+\def\th@remark{%
+  \thm@headfont{\small\itshape}%
+  \addtolength{\@totalleftmargin}{2\parindent}
+   \addtolength{\linewidth}{-2\parindent}
+   \parshape 1 2\parindent \linewidth\small  \normalfont % body font
+  \thm@preskip\topsep \divide\thm@preskip\tw@
+  \thm@postskip\thm@preskip
+}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[theorem]
+\newtheorem*{remark*}{Remark}
+\newtheorem{remarks}{Remarks}[theorem]
+
+%% \theoremstyle{plain}
+%% \newtheorem{theorem}{Theorem}[subsection]
+%% \newtheorem{proposition}{Proposition}[subsection]
+
+%% \theoremstyle{definition}
+%% \newtheorem{definition}{Definition}[subsection]
+
+%% \theoremstyle{remark}
+%% \newtheorem{remark}{Remark}[subsection]
+
+\newcommand\define[1]{\textbf{``#1''}}

@@ -1,0 +1,9 @@
+*~
+*.aux
+*.toc
+*.log
+*.out
+# ignore TeX's products
+*.pdf
+*.dvi
+*.ps
