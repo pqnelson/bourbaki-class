@@ -1,4 +1,5 @@
 \documentclass[twoside,usebookdim]{bourbaki}
+%\documentclass[twoside]{bourbaki}
 \title{Algebra}
 \author{Nicholas Bourbaki}
 \begin{document}
@@ -17,6 +18,7 @@ $(x,y)\in E\times E$ is called the composition of $x$ and $y$ under this
 law. A set with a law of composition is called a magma.
 \end{definition}
 
+Equation example:
 \begin{equation}
 E = mc^{2}
 \end{equation}
@@ -49,19 +51,22 @@ If $a\in E$ we usually write $a\mathbin{\top} Y$ instead of $\{a\}\mathbin{\top}
 $X\mathbin{\top} a$ instead of $X\mathbin{\top}\{a\}$. The mapping $(X, Y)\mapsto X\mathbin{\top} Y$
 is a law of composition on the set of subsets of $E$.
 
-\begin{definition}
-Let $E$ be a magma and $\mathbin{\top}$ denote its law of composition. The law of
+Definition. Let $E$ be a magma and $\mathbin{\top}$ denote its law of composition. The law of
 composition $(x, y)\mapsto y\mathbin{\top} x$ on $E$ is called the opposite of the
 above. The set $E$ with this law is called the opposite magma of $E$.
-\end{definition}
 
 
-\begin{definition}
+Definition.
 Let $E$ be a set. A mapping $f$ of $E\times E$ into $E$ is called a law
 of composition on $E$. The value $f(x,y)$ of $f$ for an ordered pair
 $(x,y)\in E\times E$ is called the composition of $x$ and $y$ under this
 law. A set with a law of composition is called a magma.
-\end{definition}
+
+Definition.
+Let $E$ be a set. A mapping $f$ of $E\times E$ into $E$ is called a law
+of composition on $E$. The value $f(x,y)$ of $f$ for an ordered pair
+$(x,y)\in E\times E$ is called the composition of $x$ and $y$ under this
+law. A set with a law of composition is called a magma.
 
 The composition of $x$ and $y$ is usually denoted by writing $x$ and $y$
 in a definite order and separating them by a characteristic symbol of
@@ -77,6 +82,33 @@ product of $x$ and $y$) and we say that it is written
 multiplicatively. In the general arguments of paragraphs 1 to 3 of this
 chapter we shall generally use the symbols $\mathbin{\top}$ and $\bot$ to denote
 arbitrary laws of composition.
+
+By an abuse of language, a mapping of a subset of $E\times E$ into $E$
+is sometimes called a law of composition not everywhere defined on $E$.
+
+Let $(x,y)\mapsto x\mathbin{\top} y$ be a law of composition on a set $E$. Given
+any two subsets $X$, $Y$ of $E$, $X \mathbin{\top} Y$ (provided this notation does
+not lead to confusion) will denote the set of elements $x\mathbin{\top} y$ in $E$,
+where $x\in X$, $y\in Y$ (in other words, the image of $X\times Y$ under
+the mapping $(x,y)\mapsto x\mathbin{\top} y$).
+
+If $a\in E$ we usually write $a\mathbin{\top} Y$ instead of $\{a\}\mathbin{\top} Y$ and
+$X\mathbin{\top} a$ instead of $X\mathbin{\top}\{a\}$. The mapping $(X, Y)\mapsto X\mathbin{\top} Y$
+is a law of composition on the set of subsets of $E$.
+
+By an abuse of language, a mapping of a subset of $E\times E$ into $E$
+is sometimes called a law of composition not everywhere defined on $E$.
+
+Let $(x,y)\mapsto x\mathbin{\top} y$ be a law of composition on a set $E$. Given
+any two subsets $X$, $Y$ of $E$, $X \mathbin{\top} Y$ (provided this notation does
+not lead to confusion) will denote the set of elements $x\mathbin{\top} y$ in $E$,
+where $x\in X$, $y\in Y$ (in other words, the image of $X\times Y$ under
+the mapping $(x,y)\mapsto x\mathbin{\top} y$).
+
+If $a\in E$ we usually write $a\mathbin{\top} Y$ instead of $\{a\}\mathbin{\top} Y$ and
+$X\mathbin{\top} a$ instead of $X\mathbin{\top}\{a\}$. The mapping $(X, Y)\mapsto X\mathbin{\top} Y$
+is a law of composition on the set of subsets of $E$.
+
 
 By an abuse of language, a mapping of a subset of $E\times E$ into $E$
 is sometimes called a law of composition not everywhere defined on $E$.

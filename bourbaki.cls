@@ -80,8 +80,9 @@
 \ifusebookdim
 \usepackage[inner=0.75in,
   outer=0.75in,
-  top=1in,
-  headsep=2pc,
+  top=3pc,
+  headsep=1pc,
+  includehead,
   bottom=1.25in,
   footskip=2pc,
   paperwidth=6.1in,

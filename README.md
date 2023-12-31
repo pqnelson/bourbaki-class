@@ -39,3 +39,6 @@ Chapter III, section 1 and section 7, for evidence of this.)
 - Add an `examples` environment?
 - Make list environments pretty
 - Add a dangerous bend environment?
+- The book configuration (with `usepage` option) appears to have 43
+  lines per page, but the (English translation) appears to have 44 lines
+  per page. Where is the discrepency?
